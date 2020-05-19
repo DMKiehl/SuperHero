@@ -54,7 +54,8 @@ namespace SuperHeroCreator.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var hero = _context.Superheroes.Where(s => s.Id == id).SingleOrDefault();
+            return View(hero);
         }
 
         [HttpPost]
@@ -80,7 +81,8 @@ namespace SuperHeroCreator.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            var hero = _context.Superheroes.Where(s => s.Id == id).SingleOrDefault();
+            return View(hero);
         }
 
         [HttpPost]
